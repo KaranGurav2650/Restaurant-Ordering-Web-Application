@@ -1445,4 +1445,68 @@ select.form-control {
   color: #000000 !important;
 }
 
+/* OVERRIDE: Keep desktop layout on mobile */
+@media (max-width: 1024px) {
+  .restaurant-container {
+    grid-template-columns: 160px 1fr 240px 160px !important;
+    grid-template-rows: 1fr !important;
+    gap: 6px;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-container {
+    grid-template-columns: 140px 1fr 220px 140px !important;
+    grid-template-rows: 1fr !important;
+    gap: 4px;
+    padding: 4px;
+    overflow-x: auto;
+    height: 100vh;
+  }
+  
+  .services-panel,
+  .menu-panel,
+  .cart-panel, 
+  .status-panel {
+    grid-column: auto !important;
+    grid-row: 1 !important;
+    border-right: 1px solid var(--border-gray);
+    border-bottom: none;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-container {
+    grid-template-columns: 120px 1fr 200px 120px !important;
+    gap: 2px;
+    min-width: 600px;
+  }
+  
+  .service-btn {
+    padding: 8px 4px;
+    font-size: 10px;
+    flex-direction: column;
+  }
+  
+  .category-tab {
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+  
+  .menu-item-image {
+    height: 60px;
+  }
+}
+
+/* Enable horizontal scrolling on small screens */
+body {
+  overflow-x: auto;
+}
+
+.restaurant-container {
+  min-width: 600px;
+}
+
 }
